@@ -1,0 +1,313 @@
+.hero {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 10;
+
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 2rem;
+
+  box-sizing: border-box;
+
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+
+  z-index: 11;
+
+  margin-top: -5rem;
+
+  opacity: 1;
+
+  animation:
+    heroReveal
+    1.4s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+
+/* =========================================
+   SUN
+========================================= */
+
+.hero-sun {
+  position: absolute;
+
+  top: -90px;
+  left: 50%;
+
+  width: 140px;
+  height: 140px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 205, 100, 0.12),
+      transparent 68%
+    );
+
+  filter: blur(2px);
+
+  opacity: 0.75;
+
+  animation:
+    heroSunPulse
+    6s
+    ease-in-out
+    infinite;
+}
+
+.hero-sun span {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 8px;
+  height: 8px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #ffe6a4;
+
+  box-shadow:
+    0 0 25px rgba(255, 195, 80, 0.8);
+}
+
+@keyframes heroSunPulse {
+  0%,
+  100% {
+    transform:
+      translateX(-50%)
+      scale(0.92);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform:
+      translateX(-50%)
+      scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.hero-eyebrow {
+  margin: 0 0 1rem;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.5em;
+
+  font-weight: 500;
+
+  color:
+    rgba(255, 255, 255, 0.7);
+}
+
+.hero h1 {
+  position: relative;
+
+  margin: 0;
+
+  font-size:
+    clamp(4rem, 10vw, 8.5rem);
+
+  line-height: 0.95;
+
+  font-weight: 700;
+
+  color: #fff;
+
+  letter-spacing: -0.02em;
+
+  text-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 0 50px rgba(255, 180, 70, 0.2);
+}
+
+.hero-subtitle {
+  margin: 1.4rem 0 0;
+
+  font-size:
+    clamp(1rem, 2vw, 1.3rem);
+
+  letter-spacing: 0.18em;
+
+  color:
+    rgba(255, 239, 211, 0.88);
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.hero-divider {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+
+  margin: 1.7rem auto 1rem;
+
+  width: min(280px, 70vw);
+}
+
+.hero-divider span {
+  height: 1px;
+
+  flex: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 220, 160, 0.65)
+    );
+}
+
+.hero-divider span:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 220, 160, 0.65),
+      transparent
+    );
+}
+
+.sun-symbol {
+  color: #ffd88c;
+
+  font-size: 1.1rem;
+
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(255, 190, 70, 0.7)
+    );
+}
+
+.hero-description {
+  margin: 0;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.28em;
+
+  text-transform: uppercase;
+
+  color:
+    rgba(255, 255, 255, 0.5);
+}
+
+
+/* =========================================
+   ENTRANCE
+========================================= */
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .hero {
+    padding:
+      1.5rem
+      1.2rem
+      8rem;
+  }
+
+  .hero-content {
+    width: 100%;
+    margin-top: -6rem;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 0.75rem;
+
+    font-size: 0.48rem;
+
+    letter-spacing: 0.32em;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.4rem, 18vw, 5rem);
+
+    line-height: 1;
+  }
+
+  .hero-subtitle {
+    margin-top: 1rem;
+
+    font-size: 0.85rem;
+
+    letter-spacing: 0.08em;
+  }
+
+  .hero-divider {
+    width: 65vw;
+
+    margin-top: 1.4rem;
+  }
+
+  .hero-description {
+    font-size: 0.48rem;
+
+    letter-spacing: 0.16em;
+  }
+
+  .hero-sun {
+    top: -55px;
+
+    width: 100px;
+    height: 100px;
+  }
+}

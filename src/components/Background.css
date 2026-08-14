@@ -1,0 +1,30 @@
+.background-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.02) 35%,
+      rgba(10, 5, 3, 0.5) 100%
+    );
+
+  pointer-events: none;
+}
+
+.background-vignette {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 30%,
+      rgba(0, 0, 0, 0.28) 100%
+    );
+
+  pointer-events: none;
+}

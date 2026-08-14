@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+
+    <radialGradient id="bg" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#f6b84b"></stop>
+
+      <stop offset="55%" stop-color="#b94b25"></stop>
+
+      <stop offset="100%" stop-color="#35130e"></stop>
+    </radialGradient>
+
+    <radialGradient id="sun" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#fff7c7"></stop>
+
+      <stop offset="45%" stop-color="#ffd36a"></stop>
+
+      <stop offset="100%" stop-color="#ed7c25"></stop>
+    </radialGradient>
+
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="blur"></feGaussianBlur>
+
+      <feMerge>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+  </defs>
+
+
+  <!-- Background -->
+
+  <rect width="64" height="64" rx="16" fill="url(#bg)"></rect>
+
+
+  <!-- Sun -->
+
+  <circle cx="32" cy="27" r="13" fill="url(#sun)" filter="url(#glow)"></circle>
+
+
+  <!-- Sun rays -->
+
+  <g stroke="#ffd979" stroke-width="2" stroke-linecap="round" opacity="0.9">
+
+    <path d="M32 7v5"></path>
+    <path d="M32 42v5"></path>
+
+    <path d="M12 27h5"></path>
+    <path d="M47 27h5"></path>
+
+    <path d="M18 13l4 4"></path>
+    <path d="M42 37l4 4"></path>
+
+    <path d="M46 13l-4 4"></path>
+    <path d="M22 37l-4 4"></path>
+
+  </g>
+
+
+  <!-- Diya bowl -->
+
+  <path d="M14 43
+       Q32 51 50 43
+       Q48 56 32 57
+       Q16 56 14 43Z" fill="#7d2b1a"></path>
+
+  <path d="M16 43
+       Q32 48 48 43" fill="none" stroke="#e89a43" stroke-width="2"></path>
+
+
+  <!-- Diya flame -->
+
+  <path d="M32 43
+       C27 38 30 34 33 30
+       C38 36 39 39 35 43
+       Z" fill="#fff2a8" filter="url(#glow)"></path>
+
+  <path d="M33 43
+       C31 39 33 37 34 35
+       C36 39 36 41 34 43
+       Z" fill="#f28b28"></path>
+
+</svg>
